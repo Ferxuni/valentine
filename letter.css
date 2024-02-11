@@ -1,0 +1,163 @@
+body {
+	margin:0;
+}
+h1, p {
+    font-family: "rainyhearts";
+}
+pre {
+	text-align: center;
+	font-size: 24px;
+	transform: translate(1%, 50%); /* Move the pre element up to the middle of the page */
+	font-family: "rainyhearts";
+  }
+  @font-face {
+    font-family: "rainyhearts";
+    src: url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.eot");
+    src: url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.svg#rainyhearts")format("svg");
+}
+.bg {
+    background-image: url(hearts.png);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-attachment: fixed;
+  }
+  .bg {
+    background-image: url(hearts.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px) brightness(85%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 65%;
+  }
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  transition: transform 2s;
+  z-index: 1;
+}
+@keyframes heartbeat {
+	0% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.1);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
+.heart > img {
+  width: 100px;
+  height: auto;
+  animation: heartbeat 2s ease-in-out infinite;
+  animation-play-state: running;
+}
+.message {
+  padding: 0;
+  /* Default padding when closed */
+  background-image: url("kissmarks.jpg");
+  min-width: 400px;
+  height: 0;
+  /* Default height when closed */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  overflow: hidden;
+  /* Hide content when closed */
+  transition: height 2s ease-in-out, padding 2s ease-in-out;
+  /* Smooth transition for opening and closing */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  color: rgb(26, 25, 25);
+}
+.message.openNor { /* when open */
+  height: 50%;
+  padding: 20px;
+}
+@keyframes openmsg {
+  0% {
+    height: 0px;
+    padding: 0px 20px;
+  }
+  100% {
+    height: 75%;
+    padding: 20px 20px;
+  }
+}
+@keyframes heartMove {
+  0% {
+    top: 50%
+  }
+  100% {
+    top: 85%;
+    transform: translate(-50%, 0);
+  }
+}
+.openNor {
+  animation-direction: normal;
+  animation-play-state: running;
+}
+.closeNor {
+  animation-direction: reverse;
+  animation-play-state: running;
+}
+.bottom {
+  bottom: 5px;
+}
+.openHer {
+  animation-name: heartMove;
+  animation-duration: 2s;
+  animation-play-state: running;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+@keyframes heartMove {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 74%;
+    transform: translate(-50%, 0);
+  }
+}
+.closeHer {
+  animation-name: heartMove;
+  animation-duration: 2s;
+  animation-play-state: running;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.beating > img {
+  animation-name: beat;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+.openedHer {
+  top: 74%;
+  transform: translate(-50%, 0);
+}

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        <link href="https://db.onlinewebfonts.com/c/f03febe581b686cbac1e6d5cb7677df3?family=F04b+30" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <title>lovelove</title>
+    </head> 
+    <body>
+        
+        <div class="container">
+            <div class="bg"></div>
+            <div >
+                <div class="tracking-in-expand-fwd-bottom"></div>
+                <h1 class ="header_text">baby be my valentine plsplsplsszzz aaaa</h1>
+            </div>
+            <div class="gif_container">
+                <img class="float" src="air_balloon_with_clouds.png">
+            </div>
+            <div class="date">
+                <img class="feb" src="calendar (front).png"/>
+            </div>
+            <div class = "buttons">
+                <button class="btn" id ="yesButton" onclick="nextPage()">ofc my love</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">never, bitch.</button>                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function moveButton() {
+                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                        document.getElementById('noButton').style.left = `${x}px`;
+                        document.getElementById('noButton').style.top = `${y}px`;
+                    }
+                </script> 
+            </div>
+        </div>
+       
+    </body> 
+</html>
